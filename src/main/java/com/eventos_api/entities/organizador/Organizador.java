@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
+
 @Table(name = "organizadores")
 @Entity
 @Getter
@@ -15,11 +17,12 @@ import lombok.Setter;
 public class Organizador {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nomeOrganizador")
     private String nome;
 
     private String contato;
+
 }
