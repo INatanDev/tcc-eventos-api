@@ -1,5 +1,6 @@
 package com.eventos_api.entities.eventos;
 
+import com.eventos_api.entities.locais.Local;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,4 +29,8 @@ public class Evento {
     private String descricao;
 
     private Long capacidadeMaxima;
+
+    @ManyToOne
+    @JoinColumn(name = "local_id")
+    private Local local;
 }
